@@ -6,6 +6,14 @@
 package fr.zouhair.entities;
 
 import java.sql.Timestamp;
+import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,11 +29,21 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+
+@Entity(name = "examplaires")
 public class ExamplaireEntity {
-    
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_examplaire")
     private Long idExamplaire;
+
+    @Column(name = "date_ajout")
     private Timestamp dateAjout;
+    
+    @ManyToOne
     private LivreEntity livre;
-    
-    
+
+    @OneToMany(mappedBy = "examplaire")
+    List<HistoriqueEntity> histories;
 }

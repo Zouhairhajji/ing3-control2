@@ -6,7 +6,12 @@
 package fr.zouhair.entities;
 
 import java.sql.Timestamp;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,12 +27,25 @@ import lombok.Setter;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity(name = "histories")
 public class HistoriqueEntity {
     
     
-    private List<ExamplaireEntity> examplaires;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_history")
+    private Long idHistory;
+    
+    @Column(name = "date_emprunt")
     private Timestamp dateEmprunt;
+    
+    @Column(name = "date_retour")
     private Timestamp dateRetour;
     
+    
+    @ManyToOne
+    private ExamplaireEntity examplaire;
+    
+    @ManyToOne
     private UtilisateurEntity utilisateur;
 }
