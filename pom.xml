@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>gokan.ekinci</groupId>
-    <artifactId>dm-online-banking</artifactId>
+
+    <groupId>hajji.zouhair</groupId>
+    <artifactId>ing3-controle2</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>dm-online-banking</name>
-
+    
     <modules>
         <module>aspectj-aop-utils</module>
-        <module>client-management-services</module>
+        <module>service-controle2</module>
     </modules>
 
     <properties>
@@ -72,4 +73,5 @@
             </plugins>
         </pluginManagement>
     </build>
+
 </project>

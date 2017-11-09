@@ -3,15 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fr.ekinci.annotations;
+package fr.zouhair.annotations;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
 
 /**
  *
  * @author zouhairhajji
  */
+@Target(ElementType.METHOD)
 public @interface TryAgain {
-
     
-    public Class<? extends Exception>[] classes();
-
+    public Class<? extends Throwable>[] classes();
+    
 }
